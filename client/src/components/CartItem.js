@@ -1,19 +1,19 @@
-import React from "react";
-import { MdOutlineClose } from "react-icons/md";
-import { HiOutlineArrowLeft } from "react-icons/hi";
-import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import React from 'react'
+import { MdOutlineClose } from 'react-icons/md'
+import { HiOutlineArrowLeft } from 'react-icons/hi'
+import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
 import {
   decrementQuantity,
   deleteItem,
   increamentQuantity,
-  resetCart,
-} from "../redux/bazarSlice";
-import { ToastContainer, toast } from "react-toastify";
+  resetCart
+} from '../redux/bazarSlice'
+import { ToastContainer, toast } from 'react-toastify'
 
 const CartItem = () => {
-  const dispatch = useDispatch();
-  const productData = useSelector((state) => state.bazar.productData);
+  const dispatch = useDispatch()
+  const productData = useSelector((state) => state.bazar.productData)
   return (
     <div className="w-2/3 pr-10">
       <div className="w-full">
@@ -53,7 +53,7 @@ const CartItem = () => {
                             image: item.image,
                             price: item.price,
                             quantity: 1,
-                            description: item.description,
+                            description: item.description
                           })
                         )
                       }
@@ -71,7 +71,7 @@ const CartItem = () => {
                             image: item.image,
                             price: item.price,
                             quantity: 1,
-                            description: item.description,
+                            description: item.description
                           })
                         )
                       }
@@ -87,7 +87,7 @@ const CartItem = () => {
           </div>
           <button
             onClick={() =>
-              dispatch(resetCart()) & toast.error("Your Cart is Empty!")
+              dispatch(resetCart()) & toast.error('Your Cart is Empty!')
             }
             className="bg-red-500 text-white mt-8 ml-7 py-1 px-6 hover:bg-red-800 duration-300"
           >
@@ -116,7 +116,7 @@ const CartItem = () => {
         theme="dark"
       />
     </div>
-  );
-};
+  )
+}
 
-export default CartItem;
+export default CartItem

@@ -29,7 +29,7 @@ const Cart = () => {
     }
   }
   const payment = async (token) => {
-    await axios.post('https://server-store.onrender.com/pay', {
+    await axios.post('http://localhost:8000/pay', {
       amount: totalAmt * 100,
       token: token
     })
